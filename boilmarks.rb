@@ -14,13 +14,19 @@ DB = conn.db(uri.path.gsub(/^\//, ''))
 #  auth = DB.authenticate(ENV['DATABASE_USER'], ENV['DATABASE_PASSWORD'])
 #end
 
+set :haml, {:escape_html => true }
+
 configure :production do
   enable :raise_errors
 end
 
+get '/test' do
+  haml "%h1 This is a test"
+end
+
 get '/' do
   <<-HTML
-    <title>URL shortener</title>
+    <title>Boilmarks</title>
     <form action="/shorten" method="post">
       <input type="text" name="url" />
       <input type="submit" value="shorten" />
@@ -65,3 +71,21 @@ helpers do
   end
 end
 
+__END__
+
+@@layout
+!!! XML
+!!! Basic
+%html
+  %head
+    %title Don't be mean, be average!
+    %link{:href=>"/stylesheets/style.css",:media=>"screen",:rel=>"stylesheet",:type=>"text/css"}
+    %link{:rel=>"icon", :type=>"image/gif", :href=>"/boil.png"}
+  %body
+    != yield
+    #linkhome
+      %br
+      %br
+      %a{:href=>'/'} Home
+      %p
+        %a{:href=>'mailto:jonas@plea.se', :class=>'contact'}Contact
