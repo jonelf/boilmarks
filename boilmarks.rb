@@ -7,7 +7,7 @@ include Mongo
 
 uri = URI.parse(ENV['MONGOHQ_URL'])
 conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
-db = conn.db(uri.path.gsub(/^\//, ''))
+DB = conn.db(uri.path.gsub(/^\//, ''))
 
 #DB = Connection.new(ENV['DATABASE_URL'] || 'localhost').db('boilmarks')
 #if ENV['DATABASE_USER'] && ENV['DATABASE_PASSWORD']
