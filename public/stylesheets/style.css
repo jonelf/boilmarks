@@ -33,6 +33,13 @@ a:active {
   margin:1px;
 }
 
+.left {
+  color: black;
+  text-decoration: none;
+  width:100px;
+  margin:1px;
+}
+
 .averagelink {
   color: black;
   background: #CAFFCA;

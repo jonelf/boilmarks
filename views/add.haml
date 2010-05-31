@@ -7,23 +7,29 @@ used to boil.
 In the comment field you can add info like radius of the pot, Watts or whatever you like.
 %form{:method=>"post", :action=>"/new"}
   %p
-    Name:
+    .left
+      Name:
     %input{:type=>"text", :name=>"name", :maxlength=>50}
     %br
-    e-mail:&nbsp;
+    .left
+      e-mail:&nbsp;
     %input{:type=>"text", :name=>"email", :maxlength=>50} 
     (will not be shown)
     %br
-    Time:
+    .left
+      Time:
     %input{:type=>"text", :name=>"time", :maxlength=>10, :style=>"width:45px"}
     %br
-    Type:
+    .left
+      Type:
     %input{:type=>"text", :name=>"type", :maxlength=>50}
     %br
-    Brand:
+    .left
+      Brand:
     %input{:type=>"text", :name=>"brand_model", :maxlength=>50} (and model)
     %br
-    Comment:
+    .left
+      Comment:
     %textarea{:cols=>'80', :rows=>'5', :name=>'comment'}
     %br
     %br
