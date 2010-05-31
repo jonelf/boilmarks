@@ -21,7 +21,7 @@ configure :production do
 end
 
 get '/test' do
-  haml "%h1 This is a test for sure."
+  haml "%h1 This is a test for sure"
 end
 
 get '/' do
