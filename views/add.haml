@@ -12,7 +12,7 @@ In the comment field you can add info like radius of the pot, Watts or whatever 
     %input{:type=>"text", :name=>"name", :maxlength=>50}
     %br
     .left
-      e-mail:&nbsp;
+      Email:&nbsp;
     %input{:type=>"text", :name=>"email", :maxlength=>50} 
     (will not be shown)
     %br
@@ -26,11 +26,16 @@ In the comment field you can add info like radius of the pot, Watts or whatever 
     %br
     .left
       Brand:
-    %input{:type=>"text", :name=>"brand_model", :maxlength=>50} (and model)
+    %input{:type=>"text", :name=>"brand_model", :maxlength=>50}
+    (and model)
     %br
     .left
       Comment:
     %textarea{:cols=>'80', :rows=>'5', :name=>'comment'}
     %br
+    .left
+      Second word on this page
+    %input{:type=>"text", :name=>"pwd", :maxlength=>50}
     %br
-    %input{:type=>"submit", :value=>"Add"}
+    %br
+    %input{:type=>"submit", :value=>" Add "}
