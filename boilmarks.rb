@@ -83,5 +83,5 @@ __END__
     %link{:rel=>"icon", :type=>"image/gif", :href=>"/boil.png"}
   %body
     != yield
-      %p
-        %a{:href=>'mailto:jonas@plea.se', :class=>'contact'}Contact
+    %p
+      %a{:href=>'mailto:jonas@plea.se', :class=>'contact'}Contact
