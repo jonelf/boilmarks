@@ -25,14 +25,7 @@ get '/test' do
 end
 
 get '/' do
-  <<-HTML
-    <title>Boilmarks</title>
-    <form action="/shorten" method="post">
-      <input type="text" name="url" />
-      <input type="submit" value="shorten" />
-    </form>
-    <p>Written in Sinatra and MongoDB.</p>
-  HTML
+  haml :index
 end
 
 post '/shorten' do
