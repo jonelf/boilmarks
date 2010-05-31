@@ -28,6 +28,10 @@ get '/' do
   haml :index
 end
 
+get '/add' do
+  haml :add
+end
+
 post '/shorten' do
   reject_blank    params[:url]
   shorten         params[:url]

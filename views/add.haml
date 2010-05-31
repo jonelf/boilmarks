@@ -1,0 +1,26 @@
+%h1 Add Boilmark
+<b>Type</b> could be electric/gas/induction cooker/stove, water boiler, microwave oven, an open fire or whatever you 
+used to boil.
+%br
+<b>Time</b> should be given in minutes and seconds like 9:36
+%br
+In the comment field you can add info like radius of the pot, Watts or whatever you like.
+%form{:method=>"post", :action=>"/new"}
+  %p
+    Name:
+    %input{:type=>"text", :name=>"name", "", :maxlength=>50}
+    %br
+    e-mail (will not be showne): &nbsp;
+    %input{:type=>"text", :name=>"email", "", :maxlength=>50}
+    %br
+    Time:
+    %input{:type=>"text", :name=>"time", "", :maxlength=>10, :style=>"width:35px"}
+    %br
+    Type:
+    %input{:type=>"text", :name=>"type", "", :maxlength=>10, :style=>"width:35px"}
+    %br
+    Brand & model:
+    %input{:type=>"text", :name=>"brand_model", "", :maxlength=>10, :style=>"width:35px"}
+    %br
+    Comment:
+    %input{:type=>"textarea", :name=>"comment"}
