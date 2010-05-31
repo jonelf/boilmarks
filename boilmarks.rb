@@ -21,7 +21,7 @@ configure :production do
 end
 
 get '/test' do
-  haml "%h1 This is a test"
+  haml "%h1 This is a test for sure."
 end
 
 get '/' do
@@ -78,14 +78,10 @@ __END__
 !!! Basic
 %html
   %head
-    %title Don't be mean, be average!
+    %title Boilmarks - clocked boilers
     %link{:href=>"/stylesheets/style.css",:media=>"screen",:rel=>"stylesheet",:type=>"text/css"}
     %link{:rel=>"icon", :type=>"image/gif", :href=>"/boil.png"}
   %body
     != yield
-    #linkhome
-      %br
-      %br
-      %a{:href=>'/'} Home
       %p
         %a{:href=>'mailto:jonas@plea.se', :class=>'contact'}Contact
