@@ -20,7 +20,7 @@ configure :production do
   enable :raise_errors
 end
 
-get '/test' do
+get '/boilmarks' do
   haml "%h1 This is a test for sure."
 end
 
@@ -30,6 +30,26 @@ end
 
 get '/add' do
   haml :add
+end
+
+post '/add' do
+  name = params[:name]
+  reject_blank(name)
+  minutes_seconds = params[:time].split(":")
+  seconds = minutes_seconds[0].to_i*60+minutes_seconds[1].to_i
+  
+  if (params[:pwd].downcase=="boilmarks") do 
+    DB['boilmarks'].insert('name'=> name, 
+      'email' => params[:email],
+      'time' => params[:time],
+      'seconds' => seconds,
+      'type' => params[:type],
+      'brand_model' => params[:brand_model],
+      'comment' => params[:comment])
+    redirect('/boilmarks')
+  else
+    haml "%h1 Incorrect password."
+  end
 end
 
 post '/shorten' do
