@@ -20,7 +20,9 @@
     %tr
       %td
         Comment
-      %td
+        %br
+        (Click to show)
+      %td{ :style => "visible:false" }
         ! #{@bluecloth.new(boilmark['comment']).to_html}
     %tr{ :valign => "top", :class => "boilmarks" }
       %td
