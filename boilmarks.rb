@@ -39,7 +39,7 @@ post '/add' do
   minutes_seconds = params[:time].split(":")
   seconds = minutes_seconds[0].to_i*60+minutes_seconds[1].to_i
   if seconds==0
-    haml "%h1 {params[:time]} is not a correctly entered time."
+    haml "%h1== #{params[:time]} is not a correctly entered time."
   elsif params[:pwd].downcase=="boilmark"
     DB['boilmarks'].insert('name'=> name, 
       'email' => params[:email],

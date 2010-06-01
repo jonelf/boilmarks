@@ -1,6 +1,4 @@
-%h1 The boilmarks
-
-%p== #{@boilmarks.count.to_s}
+%h1 The Boilmarks
 
 - @boilmarks.each do |boilmark|
   .average
@@ -8,4 +6,3 @@
     %p== Time: #{boilmark['time']}
     %p== Seconds: #{boilmark['seconds']}
     %p== Date: #{boilmark['post_date']}
-    %br
