@@ -9,7 +9,7 @@
         #{boilmark['time']}
     %tr
       %td
-        Brand & model
+        Brand & model &nbsp;&nbsp;
       %td
         #{boilmark['brand_model']}
     %tr
@@ -20,8 +20,7 @@
     %tr
       %td
         Comment
-      %td
-        #{@bluecloth.new(boilmark['comment']).to_html}
+      %td!= #{@bluecloth.new(boilmark['comment']).to_html}
     %tr
       %td
         Name
