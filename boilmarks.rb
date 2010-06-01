@@ -19,6 +19,10 @@ end
 get '/boilmarks' do
   @bluecloth = BlueCloth
   @boilmarks = DB['boilmarks'].find.sort([['seconds','ascending']])
+  @average = Time.at(@boilmarks.inject(0){|sum, mark| sum+=mark['seconds'].to_i}/@boilmarks.count).gmtime.strftime('%R:%S')
+  @boilmarks = DB['boilmarks'].find.sort([['seconds','ascending']])
+  count=@boilmarks.count
+  @average = @boilmarks.
   haml :boilmarks
 end
 
