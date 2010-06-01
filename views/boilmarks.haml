@@ -1,8 +1,34 @@
 %h1 The Boilmarks
 
-- @boilmarks.each do |boilmark|
-  .average
-    %p== Name: #{boilmark['name']}
-    %p== Time: #{boilmark['time']}
-    %p== Seconds: #{boilmark['seconds']}
-    %p== Date: #{boilmark['post_date']}
+%table{ :cellpadding => "5", :cellspacing => "0" }
+  - @boilmarks.each do |boilmark|
+  %tr{ :valign => "top", :class => "boilmarks" }
+    %td
+      Time
+    %td
+      #{boilmark['time']}
+  %tr
+    %td
+      Brand & model
+    %td
+      #{boilmark['brand_model']}
+  %tr
+    %td
+      Type
+    %td
+      #{boilmark['type']}
+  %tr
+    %td
+      Comment
+    %td
+      #{BlueCloth.new(boilmark['comment']).to_html}
+  %tr
+    %td
+      Name
+    %td
+      #{boilmark['name']}
+  %tr
+    %td
+      Date
+    %td
+      #{boilmark['post_date']}
