@@ -10,11 +10,6 @@ uri = URI.parse(ENV['MONGOHQ_URL'])
 conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
 DB = conn.db(uri.path.gsub(/^\//, ''))
 
-#DB = Connection.new(ENV['DATABASE_URL'] || 'localhost').db('boilmarks')
-#if ENV['DATABASE_USER'] && ENV['DATABASE_PASSWORD']
-#  auth = DB.authenticate(ENV['DATABASE_USER'], ENV['DATABASE_PASSWORD'])
-#end
-
 set :haml, {:escape_html => true }
 
 configure :production do
@@ -50,8 +45,7 @@ post '/add' do
       'type' => params[:type],
       'brand_model' => params[:brand_model],
       'comment' => params[:comment],
-      'post_date' => params[:date])
-#      'post_date' => Time.now.strftime('%Y-%m-%d'))
+      'post_date' => Time.now.strftime('%Y-%m-%d'))
     redirect('/boilmarks')
   else
     haml "%h1 Incorrect password."
