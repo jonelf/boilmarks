@@ -56,7 +56,6 @@ helpers do
   def reject_blank(url)
     redirect('/') unless url.size > 0
   end
-
 end
 
 __END__
