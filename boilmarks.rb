@@ -21,7 +21,8 @@ configure :production do
 end
 
 get '/boilmarks' do
-  haml "%h1 This is a test for sure."
+  @boilmarks = DB['boilmarks'].find()
+  haml :boilmarks
 end
 
 get '/' do
@@ -38,14 +39,15 @@ post '/add' do
   minutes_seconds = params[:time].split(":")
   seconds = minutes_seconds[0].to_i*60+minutes_seconds[1].to_i
   
-  if params[:pwd].downcase=="boilmarks"
+  if params[:pwd].downcase=="boilmark"
     DB['boilmarks'].insert('name'=> name, 
       'email' => params[:email],
       'time' => params[:time],
       'seconds' => seconds,
       'type' => params[:type],
       'brand_model' => params[:brand_model],
-      'comment' => params[:comment])
+      'comment' => params[:comment],
+      'post_date' => Time.now.strftime('%Y-%m-%d'))
     redirect('/boilmarks')
   else
     haml "%h1 Incorrect password."
