@@ -21,7 +21,7 @@
       %td
         Comment
       %td
-        !=#{@bluecloth.new(boilmark['comment']).to_html}
+        %p!= #{@bluecloth.new(boilmark['comment']).to_html}
     %tr
       %td
         Name
