@@ -2,6 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'uri'
 require 'mongo'
+require 'bluecloth'
 
 include Mongo
 
