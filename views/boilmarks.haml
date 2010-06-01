@@ -17,12 +17,12 @@
         Type
       %td
         #{boilmark['type']}
-    %tr
+    %tr{ :onClick => "
       %td
         Comment
         %br
         (Click to show)
-      %td{ :style => "visible:false" }
+      %td{ :style => "display:none", :id="#{boilmark['_id']" }
         ! #{@bluecloth.new(boilmark['comment']).to_html}
     %tr{ :valign => "top", :class => "boilmarks" }
       %td
