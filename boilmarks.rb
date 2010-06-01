@@ -23,7 +23,7 @@ end
 
 get '/boilmarks' do
   @bluecloth = BlueCloth
-  @boilmarks = DB['boilmarks'].find()
+  @boilmarks = DB['boilmarks'].find.sort([['seconds','ascending']])
   haml :boilmarks
 end
 
@@ -50,7 +50,8 @@ post '/add' do
       'type' => params[:type],
       'brand_model' => params[:brand_model],
       'comment' => params[:comment],
-      'post_date' => Time.now.strftime('%Y-%m-%d'))
+      'post_date' => params[:date])
+#      'post_date' => Time.now.strftime('%Y-%m-%d'))
     redirect('/boilmarks')
   else
     haml "%h1 Incorrect password."

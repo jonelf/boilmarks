@@ -12,7 +12,7 @@
         Brand & model &nbsp;&nbsp;
       %td
         #{boilmark['brand_model']}
-    %tr
+    %tr{ :valign => "top", :class => "boilmarks" }
       %td
         Type
       %td
@@ -22,7 +22,7 @@
         Comment
       %td
         ! #{@bluecloth.new(boilmark['comment']).to_html}
-    %tr
+    %tr{ :valign => "top", :class => "boilmarks" }
       %td
         Name
       %td
