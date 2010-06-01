@@ -4,7 +4,7 @@
 
 - @boilmarks.each do |boilmark|
   .average
-    %p== Name: #{boilmark.name}
-    %p== Time: #{boilmark.time}
-    %p== Date: #{boilmark.post_date}
+    %p== Name: #{boilmark['name']}
+    %p== Time: #{boilmark['time']}
+    %p== Date: #{boilmark['post_date']}
     %br
