@@ -21,6 +21,7 @@ configure :production do
 end
 
 get '/boilmarks' do
+  @bluecloth = BlueCloth
   @boilmarks = DB['boilmarks'].find()
   haml :boilmarks
 end
