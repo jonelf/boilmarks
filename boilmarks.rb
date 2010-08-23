@@ -24,6 +24,10 @@ get '/boilmarks' do
   haml :boilmarks
 end
 
+get '/envenvenv'
+  haml "%h1 " + ENV['MONGOHQ_URL']
+end
+
 get '/' do
   haml :index
 end
