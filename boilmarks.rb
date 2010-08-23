@@ -24,7 +24,7 @@ get '/boilmarks' do
   haml :boilmarks
 end
 
-get '/envenvenv'
+get '/envenvenv' do
   haml "%h1 " + ENV['MONGOHQ_URL']
 end
 
