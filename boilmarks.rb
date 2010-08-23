@@ -8,7 +8,7 @@ include Mongo
 
 uri = URI.parse(ENV['MONGOHQ_URL'])
 conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
-DB = conn.db(uri.path.gsub(/^\//, ''))
+DB = conn.db(uri.path.gsub(/^\//, ''), :slave_ok=>true)
 
 set :haml, {:escape_html => true }
 
