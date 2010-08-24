@@ -7,7 +7,7 @@ require 'bluecloth'
 include Mongo
 
 uri = URI.parse(ENV['MONGOHQ_URL'])
-conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'], {:slave_ok => true})
+conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL']) #, {:slave_ok => true})
 DB = conn.db(uri.path.gsub(/^\//, ''))
 
 set :haml, {:escape_html => true }
